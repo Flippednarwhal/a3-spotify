@@ -16,22 +16,22 @@
 			</tr>
 		</thead>
 		<tbody>
-			<!--TODO: Use @for to loop over tracks-->
+			<!--@for to loop over tracks-->
 			@for (t of tracks; track t.id; let idx = $index){
 			<tr>
-				<!--TODO: Populate with row index (start with 1!)-->
+				<!--Populate with row index (start with 1!)-->
 				<td>{{idx+1}}</td>
 				<td>
-					<!--TODO: link to the endpoint for that track, display the track's name-->
+					<!--link to the endpoint for that track, display the track's name-->
 					<a [href]="'/track/' + t.id">{{t.name}}</a>
 				</td>
-				<!--TODO: display the track's duration-->
+				<!--display the track's duration-->
 				<td>{{t.durationStr}}</td>
-				<!--TODO: Use @if to hide if hideArtist is true; link to the first artist's endpoint and display the first artist's name-->
+				<!--hide if hideArtist is true; link to the first artist's endpoint and display the first artist's name-->
 				@if (hideArtist == false){
 					<td><a [href]="'/artist/' + t.artists[0].id">{{t.artists[0].name}}</a></td>
 				}
-				<!--TODO: Use @if to hide if hideAlbum is true; link to the album's endpoint and display the album's name-->
+				<!--hide if hideAlbum is true; link to the album's endpoint and display the album's name-->
 				@if (hideAlbum == false){
 					<td><a [href]="'/album/' + t.album.id">{{t.album.name}}</a></td>
 				}
